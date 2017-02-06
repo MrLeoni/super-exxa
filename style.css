@@ -18,35 +18,25 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 Navigation
-	1.1 Menus
 2.0 Accessibility
 3.0 Alignments
-4.0 Clearings
-5.0 Widgets
-6.0 Content
-	6.1 Posts and pages
-	6.2 Comments
-7.0 Infinite scroll
-8.0 Media
-	8.1 Captions
-	8.2 Galleries
-9.0 Custom CSS
-	9.1 Setup
-	9.2 Header
-	9.3 Footer
-	9.4 Quem Somos
-	9.5 Produtos
-	9.6 Contatos
-	9.7 Archive / Search
-	9.8 404 / Not Found
-	9.9 Post Page
-	9.10 Queries
+4.0 Media
+	4.1 Captions
+	4.2 Galleries
+5.0 Custom CSS
+	5.1 Setup
+	5.2 Header
+	5.3 Footer
+	5.4 Quem Somos
+	5.5 Produtos
+	5.6 Contatos
+	5.7 Archive / Search
+	5.8 404 / Not Found
+	5.9 Post Page
+	5.10 Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-1.1 Menus
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
@@ -88,38 +78,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 .main-navigation ul ul a {
 	width: 200px;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
 }
 
 /* Small menu. */
@@ -219,118 +177,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 /*--------------------------------------------------------------
-4.0 Clearings
+4.0 Media
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
-
-/*--------------------------------------------------------------
-5.0 Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets. */
-.widget select {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-6.0 Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-6.1 Posts and pages
---------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0;
-}
-
-.byline,
-.updated:not(.published) {
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-6.2 Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-7.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-8.0 Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
@@ -339,7 +187,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-8.1 Captions
+4.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -361,62 +209,12 @@ object {
 }
 
 /*--------------------------------------------------------------
-8.2 Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-}
-
-.gallery-caption {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-9.0 Custom CSS
+5.0 Custom CSS
 --------------------------------------------------------------*/
 
-/*-----------------*/
-/*--- 9.1 SETUP ---*/
-/*-----------------*/
+/*-----------------------------
+5.1 Setup
+-----------------------------*/
 
 body {
   font-family: Lato, sans-serif;
@@ -451,8 +249,6 @@ ul li {
 .row {
   padding: 0;
 }
-
-/*--- REUSABLE ---*/
 
 /*BANNER*/
 
@@ -632,103 +428,128 @@ ul li {
 	background-color: #178acd;
 }
 
-/*---------------------*/
-/*--- 9.1 SETUP END ---*/
-/*---------------------*/
+/*-----------------------------
+5.2 Header
+-----------------------------*/
 
-/*------------------*/
-/*--- 9.2 HEADER ---*/
-/*------------------*/
-
-/*NAVBAR*/
-
-.custom-navbar .navbar {
-	margin-bottom: 0;
+.site-nav {
+  width: 100%;
+  padding: 10px 0 0;
+  background-color: #fff;
+  position: relative;
+  z-index: 99;
+  box-shadow: 0 1px 10px #222;
 }
 
-.custom-navbar .navbar-default {
-	background-color: #fff;
-	border: 0;
-	border-radius: 0;
-	box-shadow: 5px 1px 10px #222;
+.logo-box {
+  width: 240px;
+  float: left;
 }
 
-/* NAVBAR BRAND */
-
-.custom-navbar .navbar-brand {
-	padding: 5px 0;
+.logo-box img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.custom-navbar .navbar-brand img {
-	display: block;
-	width: 240px;
-	height: auto;
-	margin: 0 auto;
+.link-box {
+  width: 70%;
+  float: right;
 }
 
-/*NAV NAVBAR-RIGHT*/
-
-.custom-navbar .navbar-right {
-	margin: 15px 5% 0 0;
+.link-box ul {
+  margin: 3px 0 0;
+  text-align: right;
 }
 
-.custom-navbar .navbar-nav>li {
+.link-box ul li:first-child {
+  margin-left: 0;
 }
 
-.custom-navbar .navbar-default .navbar-collapse,
-.custom-navbar .navbar-default .navbar-form {
-	border-color: #0096b6;
+.link-box li {
+  display: inline-block;
+  margin-left: 30px;
 }
 
-/*NAVBAR LINKS*/
-
-.custom-navbar .navbar-nav>li>a:link,
-.custom-navbar .navbar-nav>li>a:visited {
-	padding: 25px 0;
-	margin: 0 15px;
-	color: #0096b6;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-size: 0.8em;
-	border-bottom: 3px solid transparent;
-	-webkit-transition: 0.3s all;
-	transition: 0.3s all;
+.link-box li a:link,
+.link-box li a:visited {
+  display: inline-block;
+  padding: 25px 0;
+  color: #0096b6;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
-.custom-navbar .navbar-nav>li>a:hover,
-.custom-navbar .navbar-nav>li>a:active {
-	color: #da0633;
-	border-color: #da0633;
+.link-box li.current-menu-item a:link,
+.link-box li.current-menu-item a:visited,
+.link-box li a:hover,
+.link-box li a:active {
+  color: #da0633;
+  border-color: #da0633;
 }
 
-/*TOGGLE*/
+/* Nav button */
 
-.custom-navbar .navbar-toggle {
-	margin-top: 30px;
-	margin-bottom: 30px;
+.nav-btn-box {
+  display: none;
+  width: 40px;
+  height: auto;
+  margin: 26px 0 0;
+  float: right;
 }
 
-.custom-navbar .navbar-default .navbar-toggle {
-	border-color: #0096b6;
+.nav-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
-.custom-navbar .navbar-default .navbar-toggle .icon-bar {
-	background-color: #0096b6;
+.nav-btn:focus {
+  outline: none;
 }
 
-.custom-navbar .navbar-default .navbar-toggle:focus,
-.custom-navbar .navbar-default .navbar-toggle:hover {
-	background-color: transparent;
+.active.nav-btn span,
+.nav-btn:hover span {
+  background-color: #da0633;
+}
+
+.nav-btn span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #0096b6;
+  position: relative;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.nav-btn span:nth-child(2) {
+  margin: 8px 0;
+}
+
+.active.nav-btn span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 4px;
+}
+
+.active.nav-btn span:nth-child(2) {
+  display: none;
+}
+
+.active.nav-btn span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 
-/*----------------------*/
-/*--- 9.2 HEADER END ---*/
-/*----------------------*/
-
-/*------------------*/
-/*--- 9.3 FOOTER ---*/
-/*------------------*/
+/*-----------------------------
+5.3 Footer
+-----------------------------*/
 
 .custom-footer {
 	background-color: #0082cd;
@@ -771,13 +592,9 @@ ul li {
 	margin: 0;
 }
 
-/*----------------------*/
-/*--- 9.3 FOOTER END ---*/
-/*----------------------*/
-
-/*----------------------*/
-/*--- 9.4 QUEM SOMOS ---*/
-/*----------------------*/
+/*-----------------------------
+5.4 Quem Somos
+-----------------------------*/
 
 .quem-somos-logo-box {
 	margin: 2% 0 5%;
@@ -945,13 +762,9 @@ ul li {
 	margin-bottom: 10px;
 }
 
-/*--------------------------*/
-/*--- 9.4 QUEM SOMOS END ---*/
-/*--------------------------*/
-
-/*--------------------*/
-/*--- 9.5 PRODUTOS ---*/
-/*--------------------*/
+/*-----------------------------
+5.5 Produtos
+-----------------------------*/
 
 /*PRODUTOS*/
 
@@ -1080,14 +893,9 @@ ul li {
 	color: #db0632;
 }
 
-
-/*------------------------*/
-/*--- 9.5 PRODUTOS END ---*/
-/*------------------------*/
-
-/*-------------------*/
-/*--- 9.6 CONTATO ---*/
-/*-------------------*/
+/*-----------------------------
+5.6 Contato
+-----------------------------*/
 
 #contato {
 	padding: 5% 0 8%;
@@ -1141,13 +949,9 @@ ul li {
 	background-color: #da0633;
 }
 
-/*-----------------------*/
-/*--- 9.6 CONTATO END ---*/
-/*-----------------------*/
-
-/*--------------------------*/
-/*--- 9.7 ARCHIVE/SEARCH ---*/
-/*--------------------------*/
+/*-----------------------------
+5.7 Archive / Search
+-----------------------------*/
 
 #archive .posts-wrapper,
 #search .posts-wrapper {
@@ -1167,13 +971,9 @@ ul li {
 	font-size: 2em;
 }
 
-/*------------------------------*/
-/*--- 9.7 ARCHIVE/SEARCH END ---*/
-/*------------------------------*/
-
-/*----------------------*/
-/*--- 9.8 404 / NONE ---*/
-/*----------------------*/
+/*-----------------------------
+5.8 404
+-----------------------------*/
 
 .result-search-box {
 	margin: 150px 0 200px;
@@ -1190,13 +990,9 @@ ul li {
 	font-size: 3em;
 }
 
-/*--------------------------*/
-/*--- 9.8 404 / NONE END ---*/
-/*--------------------------*/
-
-/*----------------------*/
-/*--- 9.9 POSTS PAGE ---*/
-/*----------------------*/
+/*-----------------------------
+5.9 Post Page
+-----------------------------*/
 
 /*TITLE*/
 .post-wrapper {
@@ -1451,13 +1247,9 @@ ul li {
 	background-color: #dd0330;
 }
 
-/*--------------------------*/
-/*--- 9.9 POSTS PAGE END ---*/
-/*--------------------------*/
-
-/*--------------------*/
-/*--- 9.10 QUERIES ---*/
-/*--------------------*/
+/*-----------------------------
+5.10 Queries
+-----------------------------*/
 
 @media (max-width: 1200px) {
 	
@@ -1487,6 +1279,49 @@ ul li {
 		font-size: 14px;
 	}
 	
+	/*HEADER*/
+	
+	.site-nav {
+    padding: 10px 0 10px;
+  }
+  
+	.link-box {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    background-color: #0096b6;
+  }
+  
+  .link-box ul {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .link-box li {
+    display: block;
+    margin-left: 0;
+  }
+  
+  .link-box li a:link,
+  .link-box li a:visited {
+    color: #fff;
+    font-size: 1.2em;
+    border: 0;
+  }
+  
+  .link-box li.current-menu-item a:link,
+  .link-box li.current-menu-item a:visited,
+  .link-box li a:hover,
+  .link-box li a:active {
+    color: #da0633;
+  }
+	
+	.nav-btn-box {
+    display: block;
+  }
+	
 	/*PRODUTOS*/
 	.slider-info-box {
 		display: none;
@@ -1510,16 +1345,23 @@ ul li {
 
 @media (max-width: 768px) {
 	
-	/*NAVBAR LINKS*/
-	.custom-navbar .navbar-nav>li>a:hover,
-	.custom-navbar .navbar-nav>li>a:active {
-		border-bottom: 3px solid transparent;
-	}
-	
 	/*CONTATO*/
 	.contato-endereco-info-box {
 		margin-top: 40px;
 	}
+	
+	/*HEADER*/
+	.logo-box {
+	  width: 200px;
+	}
+	
+	.link-box {
+    top: 82px;
+  }
+	
+	.nav-btn-box {
+    margin: 20px 0 0;
+  }
 	
 	/*FILTROS*/
 	.filtros-title {
@@ -1595,8 +1437,13 @@ ul li {
 		height: 220px;
 	}
 	
-	/*FOOTER*/
+	/*HEADER*/
+	.link-box li a:link,
+	.link-box li a:visited {
+    font-size: 1em;
+  }
 	
+	/*FOOTER*/
 	.copy p {
 		text-align: center;
 	}
@@ -1650,10 +1497,6 @@ ul li {
 @media (max-width: 320px) {
 	
 	/*HEADER*/
-	.custom-navbar .navbar-brand img {
-		width: 160px;
-		margin: 20px auto 0;
-	}
 	
 	/*FOOTER*/
 	.footer-logo-box img{
@@ -1671,7 +1514,3 @@ ul li {
 	}
 	
 }
-
-/*------------------------*/
-/*--- 9.10 QUERIES END ---*/
-/*------------------------*/
