@@ -22,34 +22,40 @@ get_header(); ?>
     get_template_part( 'template-parts/content', 'filtros' ); ?>
   
     <section id="produtos">
-      <div class="container">
-        <?php while(have_posts()) : the_post(); 
+      <div class="container" id ="lista-produtos">
+        <?php while(have_posts()): the_post();
+        // foreach($results as $post) {
+        //   setup_postdata($post);
+          
+        //   if( $post->post_type === 'post' && $post->post_status === 'publish') {
+          
+          // ACF Field
           $referencia = get_field("posts_referencia"); ?>
-         <div class="row">
-          <div class="col-sm-offset-0 col-sm-12 col-xs-offset-2 col-xs-8 produto-border">
-            <div class="row">
-              <div class="col-sm-2">
-                <div class="produto-img-box">
-                  <?php the_post_thumbnail(); ?>
+          
+          <div class="row">
+            <a href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>" class="produto-link">
+              <div class="col-sm-offset-0 col-sm-12 produto-border">
+                
+                <div class="row">
+                  <div class="col-sm-2">
+                    <div class="produto-img-box">
+                      <?php the_post_thumbnail(); ?>
+                    </div>
+                  </div>
+                  <div class="col-sm-10">
+                    <h2 class="produto-title"><?php the_title(); ?></h2>
+                    <p class="produto-ref"><?php echo $referencia ?></p>
+                  </div>
+                  <span class="produto-plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></span>
                 </div>
+                
               </div>
-              <div class="col-sm-10">
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p class="produto-ref"><?php echo $referencia ?></p>
-              </div>
-              <a class="produto-plus-sign" href="<?php the_permalink(); ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-            </div>
+            </a>
           </div>
-        </div>
-        <?php endwhile; ?>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="pagination-box clearfix">
-              <div class="nav-previous alignright"><?php next_posts_link( 'Próxima <i class="ion-ios-arrow-right"></i>' ); ?></div>
-              <div class="nav-next alignleft"><?php previous_posts_link( '<i class="ion-ios-arrow-left"></i> Anterior' ); ?></div>
-            </div>
-          </div>
-        </div>
+          
+        <?php endwhile;
+          // } // End If
+        // } // End foreach ?>
       </div>
     </section>
   
@@ -77,4 +83,20 @@ get_header(); ?>
   
   <?php endif; ?>
   
-<?php get_footer(); ?>
+<?php get_footer(); 
+
+
+// global $wpdb, $post;
+
+// $letter = 'D';
+
+// $query = "SELECT * FROM {$wpdb->posts}
+//           WHERE post_name 
+//           LIKE %s 
+//           ORDER BY post_title DESC";
+// $query = $wpdb->prepare($query, $letter.'%');
+
+// $results = $wpdb->get_results($query);
+
+
+?>

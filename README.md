@@ -29,8 +29,14 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
-### 1.2.1
+### 1.3.1 - 08/02/2017
+- Change search method to alphabet search. Response via AJAX
+- Change layout and functionality on post pages
 
+<br>
+<br>
+
+### 1.2.1
 - Change addres line in footer.php and contato.php
 
 <br>

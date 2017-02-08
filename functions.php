@@ -102,7 +102,7 @@ add_action( 'widgets_init', 'global_medicamentos_widgets_init' );
  * Enqueue scripts and styles.
  */
 function global_medicamentos_scripts() {
-	wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/assets/css/bootstrap-grid.css', array() );
+	wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array() );
 	
 	wp_enqueue_style( 'bxslider-style', get_stylesheet_directory_uri() . '/assets/css/jquery.bxslider.css', array() );
 	
@@ -117,6 +117,8 @@ function global_medicamentos_scripts() {
 	wp_enqueue_script( 'global-medicamentos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'bxslider-script', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), true );
+	
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), true );
 	
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery', 'bxslider-script'), true );
 
@@ -236,3 +238,65 @@ function custom_cat() {
 	);
 	register_taxonomy("categorias", "complementos", $args );
 }
+
+// Handle the search by letters via AJAX
+
+function get_post_by_letter() {
+  if(isset($_POST['letter'])) {
+    
+    $letter = $_POST['letter']; // letter recieved when user click
+    global $post;
+    
+    $post_args = array(
+      'numberposts' => -1,
+    );
+    
+    $posts = get_posts($post_args); // querying posts in the data base
+    $result = "";
+    
+    foreach ($posts as $post) {
+      // Split post slug into an array and get the first letter
+      $title = $post->post_name;
+      $titleArray = str_split($title);
+      $titleFirstLetter = $titleArray[0];
+      
+      setup_postdata( $post );
+      
+      // Check to see if the first letter of the name match the letter that was clicked
+      if($titleFirstLetter === $letter) {
+        
+        $referencia = get_field("posts_referencia");
+        
+        $result .= "
+        <div class='row'>
+          <a href='" . get_the_permalink() . "' title='" . get_the_title() . "' class='produto-link'>
+            <div class='col-sm-offset-0 col-sm-12 produto-border'>
+              
+              <div class='row'>
+                <div class='col-sm-2'>
+                  <div class='produto-img-box'>
+                    <img src='" . get_the_post_thumbnail_url($post->ID, 'large') . "' alt='Embalagem do produto: " . get_the_title() . "'>
+                  </div>
+                </div>
+                <div class='col-sm-10'>
+                  <h2 class='produto-title'>" . get_the_title() . "</h2>
+                  <p class='produto-ref'>$referencia</p>
+                </div>
+                <span class='produto-plus-sign'><i class='fa fa-plus' aria-hidden='true'></i></span>
+              </div>
+              
+            </div>
+          </a>
+        </div>";
+        
+      }
+    } // End foreach
+    
+    echo $result;
+    
+    die();
+    
+  }
+}
+
+add_action('wp_ajax_search', 'get_post_by_letter');

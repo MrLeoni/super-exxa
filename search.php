@@ -26,20 +26,24 @@ if ( have_posts() ) : ?>
       <?php while(have_posts()) : the_post(); 
         $referencia = get_field("posts_referencia"); ?>
         <div class="row">
-          <div class="col-sm-offset-0 col-sm-12 col-xs-offset-2 col-xs-8 produto-border">
-            <div class="row">
-              <div class="col-sm-2">
-                <div class="produto-img-box">
-                  <?php the_post_thumbnail(); ?>
+          <a href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>" class="produto-link">
+            <div class="col-sm-offset-0 col-sm-12 produto-border">
+              
+              <div class="row">
+                <div class="col-sm-2">
+                  <div class="produto-img-box">
+                    <?php the_post_thumbnail(); ?>
+                  </div>
                 </div>
+                <div class="col-sm-10">
+                  <h2 class="produto-title"><?php the_title(); ?></h2>
+                  <p class="produto-ref"><?php echo $referencia ?></p>
+                </div>
+                <span class="produto-plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></span>
               </div>
-              <div class="col-sm-10">
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p class="produto-ref"><?php echo $referencia ?></p>
-              </div>
-              <a class="produto-plus-sign" href="<?php the_permalink(); ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
+              
             </div>
-          </div>
+          </a>
         </div>
       <?php endwhile; ?>
       <div class="row">

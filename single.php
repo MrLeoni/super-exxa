@@ -33,42 +33,18 @@ get_header(); ?>
 	<section id="posts">
 			
 		<?php while ( have_posts() ) : the_post();
-
 			get_template_part( 'template-parts/content', get_post_format() );
-
-		endwhile;
-		
-		if($retirar_query->have_posts() || $solicitar_query->have_posts()) : ?>
-		
-		<div class="posts-shipping-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<!-- Empty -->
-					</div>
-					<div class="col-sm-6">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="shipping-box">
-									<button type="button" class="shipping-btn" data-toggle="modal" data-target="#retirar">Retirar Medicamento</button>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="shipping-box">
-									<button type="button" class="shipping-btn" data-toggle="modal" data-target="#solicitar">Solicitar Medicamento</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		endwhile; ?>
 
 	</section>
 	
 	<section id="modals">
 		<!-- Modal's -->
-		<?php while($retirar_query->have_posts()) : $retirar_query->the_post(); ?>
+		<?php
+		
+		if($retirar_query->have_posts() || $solicitar_query->have_posts()) :
+		
+		while($retirar_query->have_posts()) : $retirar_query->the_post(); ?>
 		<div class="modal fade" id="retirar" tabindex="-1" role="dialog" aria-labelledby="retirarLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -84,9 +60,9 @@ get_header(); ?>
 		    </div>
 		  </div>
 		</div>
-		<?php endwhile; wp_reset_postdata(); ?>
+		<?php endwhile; wp_reset_postdata();
 		
-		<?php while($solicitar_query->have_posts()) : $solicitar_query->the_post(); ?>
+		while($solicitar_query->have_posts()) : $solicitar_query->the_post(); ?>
 		<div class="modal fade" id="solicitar" tabindex="-1" role="dialog" aria-labelledby="solicitarLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
