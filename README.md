@@ -1,4 +1,4 @@
-# Super Exxa
+# [Super Exxa](http://superexxa.com.br/)
 WordPress theme
 
 Creation: [Agência Delucca](http://www.agenciadelucca.com.br)
@@ -28,6 +28,14 @@ Its a theme for __content__ administration, therefore the capabillity for change
 <br>
 
 ## Versions:
+
+### 1.4.1 - 20/02/17
+- 'Delivery' Form improved, now with Viacep
+- Minors layout`s changes in products and single products pages.
+- Update modal system, for display in single products page.
+
+<br>
+<br>
 
 ### 1.3.1 - 08/02/2017
 - Change search method to alphabet search. Response via AJAX
